@@ -7419,7 +7419,7 @@ html .index-kids-toy,
 }
 
 .store-info h5 {
-	color:#e6af5d;
+	color: #e6af5d;
 }
 
 .store-info p {
@@ -16354,11 +16354,7 @@ input.checkbox {
 	color: white !important;
 }
 
-/*===================== OTHER CATEGORIES========================= */
-/* ================================
-   OTHER PRODUCT CATEGORIES SLIDER
-   Container-safe infinite carousel
-================================ */
+/*===================== OTHER CATEGORIES =========================*/
 .other-categories {
 	padding: 60px 0;
 }
@@ -16381,44 +16377,40 @@ input.checkbox {
 	margin: 5px auto 0;
 }
 
+/* Category link */
 .category-link {
 	display: inline-block;
 	margin-top: 14px;
 	font-size: 16px;
 	font-weight: 600;
 	color: #616161;
-	/* secondary */
 	text-decoration: none;
 	transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .category-link:hover {
 	color: #e6af5d;
-	/* primary */
 	opacity: 0.85;
-	/* slight transparent feel */
 }
 
-
-/* Swiper base */
+/*===================== SWIPER =========================*/
 .categorySlider {
 	position: relative;
 	overflow: hidden;
 }
 
+/* Wrapper spacing */
 .categorySlider .swiper-wrapper {
 	align-items: center;
-	gap: 80px;
 }
 
-/* 6 ITEMS DESKTOP */
+/* SLIDE BASE */
 .categorySlider .swiper-slide {
-	width: calc((1200px - 144px) / 6);
 	flex-shrink: 0;
 	text-align: center;
 }
 
-/* Category card */
+/* Category item */
 .category-item {
 	display: flex;
 	flex-direction: column;
@@ -16439,25 +16431,7 @@ input.checkbox {
 	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Title */
-.category-item p {
-	margin-top: 14px;
-	font-size: 16px;
-	font-weight: 600;
-}
-
-.category-item p a {
-	color: #30373f;
-	text-decoration: none;
-	transition: color 0.3s ease;
-}
-
-.category-item:hover p a,
-.category-item p a:hover {
-	color: #e6af5d;
-}
-
-/* Arrows */
+/*===================== ARROWS =========================*/
 .categorySlider .swiper-button-prev,
 .categorySlider .swiper-button-next {
 	width: 42px;
@@ -16475,72 +16449,216 @@ input.checkbox {
 }
 
 .categorySlider .swiper-button-prev {
-	left: 0px;
+	left: 0;
 }
 
 .categorySlider .swiper-button-next {
-	right: 0px;
+	right: 0;
 }
 
-/* Tablet */
-@media (max-width: 991px) {
+/*===================== RESPONSIVE LOGIC =========================*/
+
+/* ===== DESKTOP LARGE (≥1200px) : 5 items ===== */
+@media (min-width: 1200px) {
 	.categorySlider .swiper-slide {
-		width: calc((720px - 72px) / 4);
+		width: calc((100% - (80px * 4)) / 5);
+	}
+
+	.categorySlider .swiper-wrapper {
+		gap: 80px;
+	}
+}
+
+/* ===== DESKTOP (992–1199px) : 4 items ===== */
+@media (max-width: 1199px) and (min-width: 992px) {
+	.categorySlider .swiper-slide {
+		width: calc((100% - (60px * 3)) / 4);
+	}
+
+	.categorySlider .swiper-wrapper {
+		gap: 60px;
 	}
 
 	.category-item img {
-		width: 100px;
-		height: 100px;
+		width: 150px;
+		height: 150px;
 	}
 }
 
-
-
-/* =========================
-   TABLET (≤ 991px)
-========================= */
+/* ===== TABLET (768–991px) : 3 items ===== */
 @media (max-width: 991px) {
-  .category-item img {
-    width: 120px;
-    height: 120px;
-  }
+	.categorySlider .swiper-slide {
+		width: calc((100% - (40px * 2)) / 3);
+	}
 
-  .categorySlider .swiper-wrapper {
-    gap: 50px;
-  }
+
+	.category-item img {
+		width: 120px;
+		height: 120px;
+	}
 }
 
-/* =========================
-   MOBILE (≤ 575px)
-========================= */
+/* ===== MOBILE (≤575px) : 2 items ===== */
 @media (max-width: 575px) {
-  .category-item img {
-    width: 95px;
-    height: 95px;
-  }
+	.categorySlider {
+		padding: 0 10px;
+	}
 
-  .categorySlider .swiper-wrapper {
-    gap: 32px;
-  }
+	.categorySlider .swiper-slide {
+		width: calc((100% - 20px) / 2);
+	}
 
-  /* prevent overflow & cut-off */
-  .categorySlider {
-    padding: 0 10px;
-  }
+	.category-item img {
+		width: 95px;
+		height: 95px;
+	}
+
+	.categorySlider .swiper-button-prev,
+	.categorySlider .swiper-button-next {
+		display: none;
+	}
 }
+
+@media (max-width: 375px) {
+    .categorySlider .swiper-wrapper {
+        gap: 0px !important;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 480px) {
+    .categorySlider .swiper-wrapper {
+        gap: 46px !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 575px) {
+    .categorySlider .swiper-wrapper {
+        gap: 40px !important;
+    }
+}
+@media (min-width: 576px) and (max-width: 991px) {
+    .categorySlider .swiper-wrapper {
+        gap: 0px !important;
+    }
+}
+
+
 
 
 /* FORCE wishlist visible on mobile */
 @media (max-width: 767px) {
-  .wishlist-link,
-  .wishlist,
-  .wishlist-btn {
-    display: inline-flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
+
+	.wishlist-link,
+	.wishlist,
+	.wishlist-btn {
+		display: inline-flex !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
 }
 
 
 
+/* ------------------responisve slider hero content-------------------- */
+@media (max-width: 991px) {
+	.slideshow__title {
+		font-size: 30px;
+		line-height: 1.25;
+		margin-bottom: 10px;
+	}
 
+	.slideshow__subtitle {
+		font-size: 15px;
+		line-height: 1.5;
+		margin-bottom: 16px;
+	}
+
+	.hero-cta {
+		padding: 10px 26px;
+		font-size: 14px;
+		margin-top: 6px;
+		/* key: small margin only */
+	}
+}
+
+@media (max-width: 767px) {
+	.wrap-caption {
+		padding: 0 12px;
+	}
+
+	.slideshow__title {
+		font-size: 20px;
+		line-height: 1.2;
+		margin-bottom: 6px;
+	}
+
+	.slideshow__subtitle {
+		font-size: 13px;
+		line-height: 1.45;
+		margin-bottom: 12px;
+	}
+
+	.hero-cta {
+		padding: 8px 20px;
+		font-size: 13px;
+		margin-top: 4px;
+
+		/* prevents pushing content down */
+		white-space: nowrap;
+		/* prevents button wrapping */
+	}
+
+	.hero-cta i {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 575px) {
+	.slideshow__title {
+		font-size: 18px;
+	}
+
+	.slideshow__subtitle {
+		display: none;
+		/* optional but recommended for short sliders */
+	}
+
+	.hero-cta {
+		margin-bottom: 35px;
+		padding: 6px 5px;
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 575px) {
+	.hero-cta {
+		margin-bottom: 35px;
+	}
+
+	.slideshow__text-content {
+		width: 92%;
+		top: 55%;
+	}
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+	.slideshow__text-content {
+		width: 88%;
+		top: 58%;
+	}
+
+	.hero-cta {
+		margin-bottom: 35px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.hero-cta {
+		margin-bottom: 35px;
+	}
+
+	.slideshow__text-content {
+		width: 83%;
+		top: 60%;
+	}
+}
